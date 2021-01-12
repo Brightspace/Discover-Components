@@ -1,0 +1,4 @@
+/build/
+node_modules/
+ifrautoaster-custom.json
+debug.log
