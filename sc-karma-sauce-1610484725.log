@@ -1,0 +1,24 @@
+2021-01-12 15:52:10.123 [28072] Sauce Connect 4.6.2, build 5183 ad61662 
+2021-01-12 15:52:10.124 [28072] Trying to autodetect proxy settings
+2021-01-12 15:52:10.129 [28072] Starting up; pid 28072
+2021-01-12 15:52:10.129 [28072] Command line arguments: C:\Brightspace\discover-components\node_modules\saucelabs\build\.sc-v4.6.2\bin\sc.exe --tunnel-identifier=karma-sauce-1610484725 --user=undefined --api-key=undefined --rest-url=https://saucelabs.com/rest/v1 
+2021-01-12 15:52:10.129 [28072] Log file: C:\Brightspace\discover-components\sc-karma-sauce-1610484725.log
+2021-01-12 15:52:10.130 [28072] Pid file: C:\Users\bhamelin\AppData\Roaming/sc_client-karma-sauce-1610484725.pid
+2021-01-12 15:52:10.130 [28072] Timezone: EST GMT offset: -5h
+2021-01-12 15:52:10.130 [28072] Using no proxy for connecting to Sauce Labs REST API.
+2021-01-12 15:52:10.495 [28072] ***********************************************************
+2021-01-12 15:52:10.495 [28072] A newer version of Sauce Connect (build 5283) is available!
+2021-01-12 15:52:10.495 [28072] Download it here:
+2021-01-12 15:52:10.495 [28072] https://saucelabs.com/downloads/sc-4.6.3-win32.zip
+2021-01-12 15:52:10.495 [28072] ***********************************************************
+2021-01-12 15:52:10.495 [28072] PROXY *** scproxy started ***
+2021-01-12 15:52:10.517 [28072] PROXY found DNS server 192.168.10.50
+2021-01-12 15:52:10.518 [28072] PROXY found DNS server 192.168.10.52
+2021-01-12 15:52:10.518 [28072] PROXY found DNS server 206.248.154.22
+2021-01-12 15:52:10.519 [28072] PROXY found DNS server 206.248.154.170
+2021-01-12 15:52:10.545 [28072] Started scproxy on port 61584.
+2021-01-12 15:52:10.545 [28072] Please wait for 'you may start your tests' to start your tests.
+2021-01-12 15:52:11.013 [28072] failed to check for existing tunnels
+2021-01-12 15:52:11.013 [28072] Sauce Connect could not establish a connection.
+2021-01-12 15:52:11.013 [28072] Please check your firewall and proxy settings.
+2021-01-12 15:52:11.013 [28072] Goodbye.
