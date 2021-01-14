@@ -13,9 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: Brightspace/third-party-actions@actions/checkout
-        with:
-          persist-credentials: false
+        uses: Brightspace/third-party-actions@actions/
       - name: Setup Node
         uses: Brightspace/third-party-actions@actions/setup-node
       - name: Semantic Release
