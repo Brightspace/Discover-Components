@@ -22,5 +22,4 @@ jobs:
         uses: BrightspaceUI/actions/semantic-release@master
         with:
           GITHUB_TOKEN: ${{ secrets.D2L_GITHUB_TOKEN }}
-          NPM: true
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM: false
