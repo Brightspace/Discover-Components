@@ -22,9 +22,6 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 			defaultType: {
 				type: String
 			},
-			_savedConditionList: {
-				type: Array,
-			},
 		};
 	}
 
@@ -85,7 +82,6 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 	firstUpdated(changedProperties) {
 		changedProperties.forEach((oldValue, propName) => {
 			if (propName === 'conditionList') {
-				this._savedConditionList = this._copyConditions(this.conditionList);
 				this._UpdateDropdownSelections();
 				this._UpdateInputText();
 			}
@@ -102,27 +98,25 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 			${this._renderPickerConditions()}
 
 			<d2l-button-subtle id="add-another-condition-button"
-				text="${this.localize('add-another-condition')}"
+				text="${this.localize('addAnotherCondition')}"
 				icon="tier1:plus-default"
 				@click="${this._addNewCondition}"></d2l-button-subtle>
 
 			<div class="d2l-picker-hr-match-separator">
 				<div class="d2l-picker-hr"></div>
-				<div class="d2l-body-compact">${this.localize('rule-matches', 'count', 'xxx')}</div>
-			</div>
-
-			<div>
-				<d2l-button
-					class="page-done-button"
-					@click="${this._pageDone}"
-					primary>${this.localize('done')}
-				</d2l-button>
-				<d2l-button
-					class="page-cancel-button"
-					@click="${this._pageCancel}">${this.localize('cancel')}
-				</d2l-button>
+				<div class="d2l-body-compact">${this.localize('ruleMatches', 'count', 'xxx')}</div>
 			</div>
 		`;
+	}
+
+	reload(newConditionList) {
+		this.conditionList = newConditionList;
+		this._UpdateDropdownSelections();
+		this._UpdateInputText();
+
+		if (this.conditionList.length === 0) {
+			this._addNewCondition();
+		}
 	}
 
 	_addNewCondition() {
@@ -130,6 +124,11 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 		condition.type = this.defaultType;
 		condition.value = '';
 		this.conditionList.push(condition);
+
+		this.dispatchEvent(new CustomEvent('add-condition-pressed', {
+			bubbles: true,
+			composed: true
+		}));
 		this.requestUpdate();
 	}
 
@@ -164,24 +163,6 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 		condition.value = e.target.value;
 	}
 
-	_pageCancel() {
-		this.conditionList = this._copyConditions(this._savedConditionList);
-		this.requestUpdate().then(() => {
-			this._UpdateDropdownSelections();
-			this._UpdateInputText();
-		});
-	}
-
-	_pageDone() {
-		this._savedConditionList = this._copyConditions(this.conditionList);
-		this.requestUpdate();
-		this.dispatchEvent(new CustomEvent('rule-conditions-changed', {
-			detail: { conditionList: this._copyConditions(this.conditionList) },
-			bubbles: true,
-			composed: true
-		}));
-	}
-
 	_removeCondition(e) {
 		const condition = e.target.condition;
 
@@ -209,7 +190,7 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 			</select>
 
 			<div class="d2l-picker-rule-separator d2l-body-compact">
-				${this.localize('condition-is')}
+				${this.localize('conditionIs')}
 			</div>
 
 			<d2l-input-text

@@ -1,13 +1,16 @@
 /* eslint quotes: 0 */
 
 export default {
-	"add-another-condition": "Add Another Condition",
+	"addAnotherCondition": "Add Another Condition",
+	"addEnrollmentRuleButton": "Add Enrollment Rule",
+	"addEnrollmentRuleHeader": "Add Enrollment Rule",
 	"and": "AND",
 	"cancel": "Cancel",
-	"condition-is": "is",
-	"condition-org-role": "Org Role",
+	"conditionIs": "is",
+	"conditionOrgRole": "Org Role",
 	"done": "Done",
+	"pickerSelectConditions": "Select Conditions",
 	"removeCondition": "Remove condition {conditionType}",
-	"select-conditions": "Select Conditions",
-	"rule-matches": "Rule matches {count} users"
+	"selectConditions": "Select Conditions",
+	"ruleMatches": "Rule matches {count} users"
 };
