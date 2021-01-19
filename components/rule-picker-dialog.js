@@ -11,11 +11,23 @@ import { RtlMixin } from '@brightspace-ui/core/mixins/rtl-mixin.js';
 class RulePickerDialog extends LocalizeElement(RtlMixin(LitElement)) {
 	static get properties() {
 		return {
-			dialogIsOpened : Boolean,
-			conditionTypes : Array,
-			defaultType: Array,
-			conditionList : Object,
-			_savedConditionList: Object
+			opened : {
+				type: Boolean,
+			},
+
+			conditionList: {
+				type: Array,
+			},
+			conditionTypes: {
+				type: Array
+			},
+			defaultType: {
+				type: String
+			},
+			_savedConditionList: {
+				type: Object
+			}
+
 		};
 	}
 
@@ -43,7 +55,7 @@ class RulePickerDialog extends LocalizeElement(RtlMixin(LitElement)) {
 				text="${this.localize('addEnrollmentRuleButton')}"
 				icon="tier1:lock-locked"></d2l-button-subtle>
 
-			<d2l-dialog ?opened="${this.dialogIsOpened}" @d2l-dialog-close="${this._dialogClosed}" title-text="${this.localize('addEnrollmentRuleHeader')}">
+			<d2l-dialog ?opened="${this.opened}" @d2l-dialog-close="${this._dialogClosed}" title-text="${this.localize('addEnrollmentRuleHeader')}">
 				<div class="d2l-rule-picker-area">${this.localize('pickerSelectConditions')}</div>
 
 
@@ -90,7 +102,7 @@ class RulePickerDialog extends LocalizeElement(RtlMixin(LitElement)) {
 	}
 
 	_dialogClosed() {
-		this.dialogIsOpened = false;
+		this.opened = false;
 	}
 
 	_dialogDonePressed() {
@@ -104,7 +116,7 @@ class RulePickerDialog extends LocalizeElement(RtlMixin(LitElement)) {
 	}
 
 	_openDialog() {
-		this.dialogIsOpened = true;
+		this.opened = true;
 	}
 
 	_saveConditions() {

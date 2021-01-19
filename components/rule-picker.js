@@ -76,7 +76,9 @@ class RulePicker extends LocalizeElement(RtlMixin(LitElement)) {
 
 	constructor() {
 		super();
+		this.conditionTypes = [];
 		this.conditionList = [];
+		this.defaultType = "";
 	}
 
 	firstUpdated(changedProperties) {
