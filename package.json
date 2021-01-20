@@ -1,5 +1,6 @@
 {
   "name": "@brightspace/discover-components",
+  "version": "0.0.1",
   "description": "Collection of components used within Discover.",
   "repository": "https://github.com/Brightspace/discover-components.git",
   "scripts": {
