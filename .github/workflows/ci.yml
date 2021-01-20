@@ -17,7 +17,7 @@ jobs:
       - name: Lint (Lit)
         run: npm run lint:lit
       - name: Unit Tests (SauceLabs)
-        run: npx karma start karma.sauce.conf.js
+        run: npm run test:sauce
         env:
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY_DESIRE2LEARN }}
           SAUCE_USERNAME: Desire2Learn
