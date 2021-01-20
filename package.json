@@ -33,7 +33,8 @@
     "stylelint": "^13"
   },
   "files": [
-    "discover-components.js",
+    "/components",
+    ".gitignore",
     "/locales"
   ],
   "publishConfig": {
