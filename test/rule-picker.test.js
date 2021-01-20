@@ -1,4 +1,4 @@
-import '../../Components/rule-picker.js';
+import '../components/rule-picker.js';
 import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { runConstructor } from '@brightspace-ui/core/tools/constructor-test-helper.js';
 
