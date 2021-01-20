@@ -1,6 +1,6 @@
-# @brightspace-ui/discover-components
+# @brightspace/discover-components
 
-[![NPM version](https://img.shields.io/npm/v/@brightspace-ui/discover-components.svg)](https://www.npmjs.org/package/@brightspace-ui/discover-components)
+[![NPM version](https://img.shields.io/npm/v/@brightspace/discover-components.svg)](https://www.npmjs.org/package/@brightspace/discover-components)
 
 Collection of components used within Discover.
 
@@ -9,14 +9,14 @@ Collection of components used within Discover.
 Install from NPM:
 
 ```shell
-npm install @brightspace-ui/discover-components
+npm install @brightspace/discover-components
 ```
 
 ## Usage
 
 ```html
 <script type="module">
-    import '@brightspace-ui/discover-components/components/rule-picker.js';
+    import '@brightspace/discover-components/components/rule-picker.js';
 </script>
 <rule-picker>My element</rule-picker>
 ```
