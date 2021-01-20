@@ -26,10 +26,8 @@ const customLaunchers = {
 };
 
 module.exports = config => {
-	const defaultConfig = createDefaultConfig(config);
-	defaultConfig.browsers = []; // remove ChromeHeadless
 	config.set(
-		merge(defaultConfig, {
+		merge(createDefaultConfig(config), {
 			files: [
 				// runs all files ending with .test in the test folder,
 				// can be overwritten by passing a --grep flag. examples:
@@ -48,7 +46,7 @@ module.exports = config => {
 			},
 			customLaunchers: customLaunchers,
 			browsers: Object.keys(customLaunchers),
-			reporters: ['saucelabs'],
+			reporters: ['dots', 'saucelabs'],
 			singleRun: true
 		}),
 	);
