@@ -158,7 +158,7 @@ describe('RulePicker', () => {
 			addButton.click();
 			await el.updateComplete;
 
-			deleteButtonList = el.shadowRoot.querySelectorAll('#delete-condition-button');
+			deleteButtonList = el.shadowRoot.querySelectorAll('#broken');
 			expect(deleteButtonList.length).to.be.equal(1);
 		});
 	});
