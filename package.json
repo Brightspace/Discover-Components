@@ -1,5 +1,6 @@
 {
-  "name": "@brightspace-ui/discover-components",
+  "name": "@brightspace/discover-components",
+  "version": "0.0.2",
   "description": "Collection of components used within Discover.",
   "repository": "https://github.com/Brightspace/discover-components.git",
   "scripts": {
@@ -10,7 +11,8 @@
     "start": "es-dev-server --app-index demo/index.html --node-resolve --dedupe --open --watch",
     "test": "npm run lint && npm run test:headless",
     "test:headless": "karma start",
-    "test:headless:watch": "karma start --auto-watch=true --single-run=false"
+    "test:headless:watch": "karma start --auto-watch=true --single-run=false",
+    "test:sauce": "karma start karma.sauce.conf.js"
   },
   "author": "D2L Corporation",
   "license": "Apache-2.0",
@@ -32,7 +34,8 @@
     "stylelint": "^13"
   },
   "files": [
-    "discover-components.js",
+    "/components",
+    ".gitignore",
     "/locales"
   ],
   "publishConfig": {

@@ -1,6 +1,6 @@
-# @brightspace-ui/discover-components
+# @brightspace/discover-components
 
-[![NPM version](https://img.shields.io/npm/v/@brightspace-ui/discover-components.svg)](https://www.npmjs.org/package/@brightspace-ui/discover-components)
+[![NPM version](https://img.shields.io/npm/v/@brightspace/discover-components.svg)](https://www.npmjs.org/package/@brightspace/discover-components)
 
 Collection of components used within Discover.
 
@@ -9,14 +9,14 @@ Collection of components used within Discover.
 Install from NPM:
 
 ```shell
-npm install @brightspace-ui/discover-components
+npm install @brightspace/discover-components
 ```
 
 ## Usage
 
 ```html
 <script type="module">
-    import '@brightspace-ui/discover-components/components/rule-picker.js';
+    import '@brightspace/discover-components/components/rule-picker.js';
 </script>
 <rule-picker>My element</rule-picker>
 ```
@@ -61,26 +61,6 @@ npm run test:headless
 # debug or run a subset of local unit tests
 # then navigate to `http://localhost:9876/debug.html`
 npm run test:headless:watch
-```
-
-### Visual Diff Testing
-
-This repo uses the [@brightspace-ui/visual-diff utility](https://github.com/BrightspaceUI/visual-diff/) to compare current snapshots against a set of golden snapshots stored in source control.
-
-The golden snapshots in source control must be updated by Github Actions.  If your PR's code changes result in visual differences, a PR with the new goldens will be automatically opened for you against your branch.
-
-If you'd like to run the tests locally to help troubleshoot or develop new tests, you can use these commands:
-
-```shell
-# Install dependencies locally
-npm i mocha -g
-npm i @brightspace-ui/visual-diff puppeteer --no-save
-# run visual-diff tests
-mocha './test/**/*.visual-diff.js' -t 10000
-# subset of visual-diff tests:
-mocha './test/**/*.visual-diff.js' -t 10000 -g some-pattern
-# update visual-diff goldens
-mocha './test/**/*.visual-diff.js' -t 10000 --golden
 ```
 
 ### Running the demos
