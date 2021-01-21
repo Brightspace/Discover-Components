@@ -1,16 +1,10 @@
 # @brightspace/discover-components
 
-[![NPM version](https://img.shields.io/npm/v/@brightspace/discover-components.svg)](https://www.npmjs.org/package/@brightspace/discover-components)
 
 Collection of components used within Discover.
 
 ## Installation
 
-Install from NPM:
-
-```shell
-npm install @brightspace/discover-components
-```
 
 ## Usage
 
