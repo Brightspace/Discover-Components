@@ -1,33 +1,11 @@
 # @brightspace/discover-components
 
 
-Collection of components used within Discover.
+Collection of components used within Discover as well as for Access Control.
 
 ## Installation
 
-
-## Usage
-
-```html
-<script type="module">
-    import '@brightspace/discover-components/components/rule-picker.js';
-</script>
-<rule-picker>My element</rule-picker>
-```
-
-**Properties:**
-
-| Property | Type | Description |
-|--|--|--|
-| | | |
-
-**Accessibility:**
-
-To make your usage of `rule-picker` accessible, use the following properties when applicable:
-
-| Attribute | Description |
-|--|--|
-| | |
+`npm install https://github.com/Brightspace/Discover-Components`
 
 ## Developing, Testing and Contributing
 
@@ -92,7 +70,6 @@ When a release is triggered, it will:
 * Update the version in `package.json`
 * Tag the commit
 * Create a GitHub release (including release notes)
-* Deploy a new package to NPM
 
 ### Releasing from Maintenance Branches
 

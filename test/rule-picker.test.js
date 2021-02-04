@@ -1,4 +1,4 @@
-import '../components/rule-picker.js';
+import '../components/condition-picker.js';
 import { expect, fixture, html, oneEvent } from '@open-wc/testing';
 import { runConstructor } from '@brightspace-ui/core/tools/constructor-test-helper.js';
 
@@ -11,27 +11,27 @@ const conditionListLong = `[{"type":"Apple", "value":"granny smith"}, {"type":"B
 
 const conditionListObj = JSON.parse(conditionList);
 
-describe('RulePicker', () => {
+describe('ConditionPicker', () => {
 
 	describe('accessibility', () => {
 		it('should pass all aXe tests', async() => {
-			const el = await fixture(html`<rule-picker></rule-picker>`);
+			const el = await fixture(html`<condition-picker></condition-picker>`);
 			await expect(el).to.be.accessible();
 		});
 	});
 
 	describe('constructor', () => {
 		it('should construct', () => {
-			runConstructor('rule-picker');
+			runConstructor('condition-picker');
 		});
 	});
 
 	describe('render', () => {
 		it('should render the conditionType dropdown data correctly', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					conditionList="${conditionList}"
-					.conditionTypes="${conditionTypes}"></rule-picker>`
+					.conditionTypes="${conditionTypes}"></condition-picker>`
 			);
 
 			const conditionDropdown = el.shadowRoot.querySelector('select');
@@ -49,9 +49,9 @@ describe('RulePicker', () => {
 
 		it('should render the initialized condition data', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					conditionList="${conditionList}"
-					.conditionTypes="${conditionTypes}"></rule-picker>`
+					.conditionTypes="${conditionTypes}"></condition-picker>`
 			);
 
 			const conditionDropdownList = el.shadowRoot.querySelectorAll('select');
@@ -70,9 +70,9 @@ describe('RulePicker', () => {
 
 		it('should should display one empty condition by default', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					.conditionTypes="${conditionTypes}"
-					defaultType="${conditionTypes[1]}"></rule-picker>`
+					defaultType="${conditionTypes[1]}"></condition-picker>`
 			);
 
 			const conditionDropdownList = el.shadowRoot.querySelectorAll('select');
@@ -86,9 +86,9 @@ describe('RulePicker', () => {
 	describe('interaction', () => {
 		it('should add a new condition when the Add Condition button is pressed', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					.conditionTypes="${conditionTypes}"
-					defaultType="${conditionTypes[1]}"></rule-picker>`
+					defaultType="${conditionTypes[1]}"></condition-picker>`
 			);
 			const addButton = el.shadowRoot.querySelector('#add-another-condition-button');
 			addButton.click();
@@ -102,9 +102,9 @@ describe('RulePicker', () => {
 
 		it('updates the condition information when the combo is modified and loses focus', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					conditionList="${conditionList}"
-					.conditionTypes="${conditionTypes}"></rule-picker>`
+					.conditionTypes="${conditionTypes}"></condition-picker>`
 			);
 
 			const conditionD2LInput = el.shadowRoot.querySelector('d2l-input-text');
@@ -124,10 +124,10 @@ describe('RulePicker', () => {
 
 		it('updates the condition information when the input field is modified', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					conditionList="${conditionList}"
 					.conditionTypes="${conditionTypes}"
-					defaultValue="${conditionTypes[0]}"></rule-picker>`
+					defaultValue="${conditionTypes[0]}"></condition-picker>`
 			);
 
 			expect(el.conditionList[0].type).to.equal(conditionTypes[0]);
@@ -146,9 +146,9 @@ describe('RulePicker', () => {
 
 		it('should display the condition deletion button only if there is greater than one condition', async() => {
 			const el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					.conditionTypes="${conditionTypes}"
-					defaultValue="${conditionTypes[0]}"></rule-picker>`
+					defaultValue="${conditionTypes[0]}"></condition-picker>`
 			);
 
 			let deleteButtonList = el.shadowRoot.querySelectorAll('#delete-condition-button');
@@ -168,10 +168,10 @@ describe('RulePicker', () => {
 		let deleteButtonList;
 		beforeEach(async() => {
 			el = await fixture(
-				html`<rule-picker
+				html`<condition-picker
 					conditionList="${conditionListLong}"
 					.conditionTypes="${conditionTypes}"
-					defaultValue="${conditionTypes[0]}"></rule-picker>`
+					defaultValue="${conditionTypes[0]}"></condition-picker>`
 			);
 
 			deleteButtonList = el.shadowRoot.querySelectorAll('#delete-condition-button');

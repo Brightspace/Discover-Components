@@ -5,30 +5,31 @@
 		<script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 		<script type="module">
 			import '@brightspace-ui/core/components/demo/demo-page.js';
-			import '../components/rule-picker.js';
-			import '../components/rule-picker-dialog.js';
+			import '../components/condition-picker.js';
+			import '../components/condition-picker-dialog.js';
+			import '../components/add-rule-button.js';
 		</script>
 		<title>Discover Components</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 	</head>
 	<body>
-		<d2l-demo-page page-title="Rule Picker">
-			<h2>Rule Picker</h2>
+		<d2l-demo-page page-title="Condition Picker">
+			<h2>Condition Picker</h2>
 			<d2l-demo-snippet>
-				<rule-picker
+				<condition-picker
 					conditionTypes='["Apple", "Banana","Orange","Potato"]'
 					defaultType='Orange'
 					conditionList='[{"type":"Apple","value":"granny smith"},{"type":"Banana","value":"cavendish"}]'
-				></rule-picker>
+				></condition-picker>
 			</d2l-demo-snippet>
 
 			<d2l-demo-snippet>
-				<rule-picker-dialog
+				<add-rule-button
 					conditionTypes='["Apple", "Banana","Orange","Potato"]'
 					defaultType='Orange'
 					conditionList='[{"type":"Apple","value":"granny smith"},{"type":"Banana","value":"cavendish"}]'
-				></rule-picker-dialog>
+				></add-rule-button>
 			</d2l-demo-snippet>
 		</d2l-demo-page>
 	</body>
