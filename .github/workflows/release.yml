@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout
         uses: Brightspace/third-party-actions@actions/checkout
+        with:
+          persist-credentials: false
       - name: Setup Node
         uses: Brightspace/third-party-actions@actions/setup-node
         with:
@@ -21,5 +23,5 @@ jobs:
       - name: Semantic Release
         uses: BrightspaceUI/actions/semantic-release@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.D2L_GITHUB_TOKEN }}
           NPM: false
