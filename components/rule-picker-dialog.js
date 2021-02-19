@@ -64,8 +64,8 @@ class RulePickerDialog extends LocalizeElement(RtlMixin(LitElement)) {
 					>
 				</rule-picker>
 
-				<d2l-button id="dialog-cancel-button" @click="${this._dialogCancelPressed}" slot="footer" primary data-dialog-action="done">Done</d2l-button>
-				<d2l-button id="dialog-done-button" @click="${this._dialogDonePressed}" slot="footer" data-dialog-action>Cancel</d2l-button>
+				<d2l-button @click="${this._dialogDonePressed}" slot="footer" primary data-dialog-action="done">Done</d2l-button>
+				<d2l-button @click="${this._dialogCancelPressed}" slot="footer" data-dialog-action>Cancel</d2l-button>
 			</d2l-dialog>
 		`;
 	}
