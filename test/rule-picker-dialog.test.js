@@ -43,7 +43,7 @@ describe('RulePickerDialog', () => {
 
 			const listener = oneEvent(el, 'rule-conditions-changed');
 
-			const doneButton = el.shadowRoot.querySelector('#dialog-done-button');
+			const doneButton = el.shadowRoot.querySelector('d2l-button[primary]');
 			doneButton.click();
 			const result = await verifyEventTimeout(listener, 'no event fired');
 			await el.updateComplete;
